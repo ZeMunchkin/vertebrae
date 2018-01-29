@@ -35,15 +35,14 @@ var Comment = Backbone.Model.extend({
      * Remember to use a getter when working with attributes! */
   },
   upvote: function(){
-    //debugger;
     var currentVotes = this.get('votes');
-    this.set('votes', currentVotes++);
+    this.set('votes', ++currentVotes);
     // Set the `votes` attribute to the current vote count plus one.
   },
   // Add a downvote function; don't forget the comma above.
   downvote: function () {
     var currentVotes = this.get('votes');
-    this.set('votes', currentVotes--);
+    this.set('votes', --currentVotes);
   }
 });
 
@@ -155,6 +154,7 @@ $('body').append(commentView.render());
  * Let's change it and see our eventlistener in action.
  * Uncomment the line below and reload the page,
  * and it should say '1' to the left of the comment. */
+
 comment.upvote();
 
 /* play with this in your console as well.
