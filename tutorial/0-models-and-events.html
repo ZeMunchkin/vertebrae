@@ -83,7 +83,7 @@ myTweet.on('change',
     console.log(e);
 
     for (var key in e.changed) {
-      console.log(`${key} was changed to ${myTweet.get(key)}`);
+      console.log(`${key} was changed to ${this.get(key)}`);
     }
   }
 );
